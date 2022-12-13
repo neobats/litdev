@@ -1,0 +1,40 @@
+.burst-container {
+  width: max-content;
+  transform: rotate(-30deg);
+  margin: 3ch;
+  color: var(--on-dark);
+  text-transform: uppercase;
+}
+.burst,
+.burst::before,
+.burst::after {
+  width: 8ch;
+  height: 8ch;
+  background: var(--magenta);
+}
+
+.burst {
+  display: inline-flex;
+  position: relative;
+  text-align: center;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.burst::before,
+.burst::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+  
+.burst::before {
+  transform: rotate(30deg);
+}
+  
+.burst::after {
+  transform: rotate(60deg);
+}
