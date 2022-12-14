@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from "../../styles/atoms/burst.module.css"
+import * as styles from "../../styles/atoms/Burst.module.css"
 
 type BurstProps = {
   text: string

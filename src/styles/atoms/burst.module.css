@@ -14,12 +14,12 @@
 }
 
 .burst {
-  display: inline-flex;
+  display: flex;
   position: relative;
   text-align: center;
-  z-index: 3;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 
 .burst::before,
