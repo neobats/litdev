@@ -1,0 +1,75 @@
+.Nav {
+  position: relative;
+  display: grid;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  z-index: 99;
+}
+
+.NavList {
+  display: none;
+  list-style: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.NavListOpen {
+  position: absolute;
+  display: flex;
+  height: 80vh;
+  top: 3rem;
+}
+
+.NavLink {
+  text-decoration: none;
+}
+
+.NavLink:hover {
+  color: var(--magenta);
+}
+
+.NavToggle {
+  cursor: pointer;
+}
+
+.NavToggle span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.NavToggle span:hover {
+  background-color: var(--green);
+}
+
+.NavItem {
+  font-size: 3rem;
+}
+
+@media screen and (width >= 769px) {
+  .Nav {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo nav";
+  }
+
+  .NavList {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .NavListOpen {
+    position: static;
+    height: unset;
+    top: unset;
+  }
+
+  .NavToggle {
+    display: none;
+  }
+  
+  .NavItem {
+    font-size: initial;
+  }
+}
