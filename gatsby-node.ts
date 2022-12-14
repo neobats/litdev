@@ -87,7 +87,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   result?.data?.allPrintifyProduct?.nodes?.forEach(({ id, slug }) => {
     createPage({
       path: `/${slug}`,
-      component: path.resolve('./src/components/templates/product.tsx'),
+      component: path.resolve('./src/components/templates/Product.tsx'),
       context: { id },
     });
   });
