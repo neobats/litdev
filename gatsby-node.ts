@@ -38,7 +38,7 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
     createNode({
       ...extractRelevantStoreData(productInStore),
       id: productInStore.id,
-      slug: slugify(productInStore.title),
+      slug: `products/${slugify(productInStore.title)}`,
       internal: {
         type: 'PrintifyProduct',
         contentDigest: createContentDigest(productInStore),
