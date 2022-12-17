@@ -35,15 +35,79 @@ h1 {
 }
 
 @media (prefers-color-scheme: dark) {
-  * {
+  :root {
     background: var(--dark);
     color: var(--on-dark);
   }
 }
 
 @media (prefers-color-scheme: light) {
-  * {
+  :root {
     background: var(--light);
     color: var(--on-light);
   }
+}
+
+.yellow {
+  background: var(--yellow);
+}
+
+.green {
+  background: var(--green);
+}
+
+.blue {
+  background: var(--blue);
+}
+
+.magenta {
+  background: var(--magenta);
+}
+
+.purple {
+  background: var(--purple);
+}
+
+.neutral {
+  background: var(--neutral);
+}
+
+.dark {
+  background: var(--dark);
+}
+
+.light {
+  background: var(--light);
+}
+
+.txt-yellow {
+  color: var(--on-light);
+}
+
+.txt-green {
+  color: var(--on-dark);
+}
+
+.txt-blue {
+  color: var(--on-dark);
+}
+
+.txt-magenta {
+  color: var(--on-dark);
+}
+
+.txt-purple {
+  color: var(--on-dark);
+}
+
+.txt-neutral {
+  color: var(--on-light);
+}
+
+.txt-dark {
+  color: var(--on-dark);
+}
+
+.txt-light {
+  color: var(--on-light);
 }
