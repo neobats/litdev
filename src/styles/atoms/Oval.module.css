@@ -1,0 +1,9 @@
+.Oval {
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transform: rotate(10deg);
+  margin: 1rem 0;
+}
