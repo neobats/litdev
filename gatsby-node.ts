@@ -11,17 +11,25 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
   actions: { createNode },
   createContentDigest
 }) => {
-  const response = await fetch(
-    `${printifyRoot}/shops/${shopId}/products.json`,
-    {
-      headers: {
-        'Authorization': `Bearer ${process.env.PRINTIFY_API_TOKEN}`,
-        "User-Agent": "LitDev Printify via Gatsby",
+  let response;
+  try {
+    response = await fetch(
+      `${printifyRoot}/shops/${shopId}/products.json`,
+      {
+        headers: {
+          'Authorization': `Bearer ${process.env.PRINTIFY_API_TOKEN}`,
+          "User-Agent": "LitDev Printify via Gatsby",
+        }
       }
+    );
+  } catch {
+    if (process.env.DEV) {
+      response = await sampleResponse()
     }
-  );
+  }
 
-  const json: ProductResponse = await response.json();
+
+  const json: ProductResponse = await response?.json();
   const {
     data,
     // current_page,
@@ -91,4 +99,44 @@ export const createPages: GatsbyNode["createPages"] = async ({
       context: { id },
     });
   });
+}
+
+
+const sampleResponse = async () => {
+  return {
+    json: async (): Promise<ProductResponse> => ({
+      data: [{
+        blueprint_id: 12345,
+        description: "For those devs who know they want to change the world, but haven't found their place yet.",
+        id: "12345",
+        images: [{
+          position: "center",
+          src: "/images/icon.png",
+          variant_ids: [121],
+        }],
+        options: [{
+          name: "12x12",
+          type: "depth",
+          values: [{
+            id: 987,
+            title: "12x12"
+          }],
+        }],
+        shop_id: 54123,
+        tags: ["home", "art", "vinyl"],
+        title: "12x12",
+        visible: true
+      }],
+      current_page: 1,
+      first_page_url: "/1",
+      from: 1,
+      last_page_url: "/1",
+      next_page_url: null,
+      path: "/1",
+      per_page: 100,
+      prev_page_url: null,
+      to: 1,
+      total: 1
+    }) 
+  }
 }
