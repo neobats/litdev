@@ -17,12 +17,20 @@
 .NavListOpen {
   position: absolute;
   display: flex;
+  background: var(--dark);
   height: 80vh;
   top: 3rem;
 }
 
+@media (prefers-color-scheme: light) {
+  .NavListOpen {
+    background: var(--light);
+  }
+}
+
 .NavLink {
   text-decoration: none;
+  color: inherit;
 }
 
 .NavLink:hover {
