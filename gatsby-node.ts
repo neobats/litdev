@@ -28,7 +28,6 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
     }
   }
 
-
   const json: ProductResponse = await response?.json();
   const {
     data,
