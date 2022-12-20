@@ -3,11 +3,12 @@
   padding: 1rem;
   border-radius: 0.25rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-areas: "title title"
                        "image tags";
 
   gap: 0.75rem;
+  position: relative;
 }
 
 .Wrapper > p {
@@ -20,4 +21,16 @@
 
 .Tags {
   grid-area: tags;
+}
+
+.BurstContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+}
+
+.HasFeatured {
+  padding-bottom: 2.5rem;
 }

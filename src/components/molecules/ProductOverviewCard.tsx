@@ -1,7 +1,8 @@
 import React from "react"
 import { ProductOverview } from "../../types/printify"
-import { ProductImage, Text } from "../atoms"
+import { Burst, ProductImage, Text } from "../atoms"
 import * as styles from "../../styles/molecules/ProductOverviewCard.module.css"
+import classNames from "classnames"
 
 type ProductOverviewCardProps = {
   product: ProductOverview
@@ -9,7 +10,10 @@ type ProductOverviewCardProps = {
 
 export const ProductOverviewCard = ({ product }: ProductOverviewCardProps) => {
   return (
-    <article key={product.id} className={styles.Wrapper}>
+    <article key={product.id} className={classNames(
+      styles.Wrapper,
+      product.featured && styles.HasFeatured
+    )}>
       <Text>{product.title}</Text>
       <ProductImage image={product.images[0]} size="large" />
       <div>
@@ -19,6 +23,11 @@ export const ProductOverviewCard = ({ product }: ProductOverviewCardProps) => {
           </Text>
         ))}
       </div>
+      {product.featured && (
+        <div className={styles.BurstContainer}>
+          <Burst text="Featured" color="random" />
+        </div>
+      )}
     </article>
   )
 }

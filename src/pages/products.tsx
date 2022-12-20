@@ -1,6 +1,7 @@
 import { graphql, PageProps } from "gatsby"
 import React from "react"
 import { ProductOverviewCard } from "../components/molecules/ProductOverviewCard"
+import { CardsProductOverview } from "../components/organisms/CardsProductOverview"
 import { Layout } from "../components/templates"
 import { ProductOverview } from "../types/printify"
 
@@ -14,9 +15,7 @@ const ProductsPage: React.FC<PageProps<ProductsPageProps>> = ({ data }) => {
 
   return (
     <Layout title="All Products">
-      <div>
-        {allProducts.map((product) => <ProductOverviewCard product={product} />)}  
-      </div>     
+      <CardsProductOverview cards={allProducts} />
     </Layout>
   )
 }
@@ -25,8 +24,8 @@ export const query = graphql`
   query {
     allPrintifyProduct {
       nodes {
+        featured
         id
-        title
         images {
           src
           position
@@ -34,6 +33,7 @@ export const query = graphql`
         }
         slug
         tags
+        title
       }
     }
   }

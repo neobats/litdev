@@ -41,6 +41,9 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
   } = json;
   
   // TODO: while next_page_url, fetch current_page + 1
+  if (data.length === 1) {
+    data[0].description += ' featured'
+  }
 
   data.forEach((productInStore) => {
     createNode({
@@ -54,6 +57,8 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
     });
   });
 }
+
+const isFeatured = (description: ProductData["description"]) => description?.includes('featured')
 
 const extractRelevantStoreData = ({
   id, 
@@ -69,6 +74,7 @@ const extractRelevantStoreData = ({
   images,
   tags,
   shop_id,
+  featured: isFeatured(description),
 })
 
 type AllProductsQueryResult = {

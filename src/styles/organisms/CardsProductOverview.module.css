@@ -1,0 +1,17 @@
+.Cards {
+  display: grid;
+  gap: 1rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

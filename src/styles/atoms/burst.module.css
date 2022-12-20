@@ -10,7 +10,6 @@
 .burst::after {
   width: 8ch;
   height: 8ch;
-  background: var(--magenta);
 }
 
 .burst {
@@ -20,6 +19,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
+  background: var(--magenta);
 }
 
 .burst::before,
@@ -29,6 +29,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  background: inherit;
 }
   
 .burst::before {

@@ -19,6 +19,7 @@ export type Product = {
   images: ProductImage[];
   shop_id: number;
   tags: string[];
+  featured?: boolean;
 }
 
 export type ProductNode = Product & {
@@ -26,7 +27,14 @@ export type ProductNode = Product & {
 }
 
 
-export type ProductOverview = Pick<ProductNode, "title" | "images" | "id" | "tags" | "slug">
+export type ProductOverview = Pick<ProductNode, 
+  | "featured"
+  | "title"
+  | "images"
+  | "id"
+  | "tags"
+  | "slug"
+>
 
 export type ProductData = Product & {
   options: ProductOptions[];
