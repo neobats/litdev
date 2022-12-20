@@ -1,0 +1,7 @@
+.main {
+  padding: 0 1rem;
+}
+
+.main > * {
+  padding: 1rem 0;
+}

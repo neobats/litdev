@@ -1,4 +1,17 @@
 .BannerFeature {
   display: grid;
+  grid-template-areas: "text feature";
+  grid-template-columns: 1fr max-content;
+  gap: 0.75rem;
   width: 100%;
+  padding: 1rem;
+}
+
+.BannerRight {
+  grid-template-columns: max-content 1fr;
+  grid-template-areas: "feature text";
+}
+
+.BannerEven {
+  grid-template-columns: 1fr 1fr;
 }

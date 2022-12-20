@@ -1,18 +1,24 @@
 import React from "react"
+import classNames from "classnames"
 import * as bannerStyles from "../../styles/molecules/BannerFeature.module.css"
-import * as colorStyles from "../../styles/color.module.css"
-
 import { Color } from "../../types/colors"
 
 type BannerFeatureProps = {
   color: Color
+  layout?: "right" | "even" | "default"
   children: React.ReactNode
 }
 
-export const BannerFeature = ({ children }: BannerFeatureProps) => {
+export const BannerFeature = ({ color, children, layout = "default", }: BannerFeatureProps) => {
   return (
-    <article className={bannerStyles.BannerFeature}>
+    <section className={classNames(
+      bannerStyles.BannerFeature,
+      color,
+      `txt-${color}`,
+      layout === "right" && bannerStyles.BannerRight,
+      layout === "even" && bannerStyles.BannerEven
+    )}>
       {children}
-    </article>
+    </section>
   )
 }

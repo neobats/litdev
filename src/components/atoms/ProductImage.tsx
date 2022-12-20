@@ -8,7 +8,7 @@ type ProductImageProps = {
   size: "small" | "medium" | "large"
 }
 
-export const ProductImage = ({ image }: ProductImageProps) => {
+export const ProductImage = ({ size, image }: ProductImageProps) => {
 
   return (
     <img
@@ -16,7 +16,8 @@ export const ProductImage = ({ image }: ProductImageProps) => {
       key={`${image.position}-${image.variant_ids[0]}`}
       alt={`product from position ${image.position}`}
       className={classNames(
-        styles.Image
+        styles.Image,
+        styles[size]
       )}
     />
   )

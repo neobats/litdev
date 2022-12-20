@@ -1,6 +1,7 @@
 import * as React from "react"
 import "../../styles/global.css"
 import { Nav } from "../molecules"
+import * as styles from "../../styles/templates/Layout.module.css"
 
 type LayoutProps = {
   title: string
@@ -15,7 +16,7 @@ export const Layout = ({ title, children }: LayoutProps) => {
   return (
     <>
     <Nav />
-    <main>
+    <main className={styles.main}>
       <h1>{title}</h1>
       {children}
     </main>

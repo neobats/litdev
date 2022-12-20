@@ -2,3 +2,15 @@
   width: 100%;
   height: auto;
 }
+
+.small {
+  max-width: min(376px, 50%);
+}
+
+.medium {
+  max-width: min(500px, 75%);
+}
+
+.large {
+  max-width: 1024px;
+}

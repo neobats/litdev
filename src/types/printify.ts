@@ -11,6 +11,7 @@ export type ProductResponse = {
   to: number;
   total: number;
 }
+
 export type Product = {
   id: string;
   title: string;
@@ -19,6 +20,13 @@ export type Product = {
   shop_id: number;
   tags: string[];
 }
+
+export type ProductNode = Product & {
+  slug: string
+}
+
+
+export type ProductOverview = Pick<ProductNode, "title" | "images" | "id" | "tags" | "slug">
 
 export type ProductData = Product & {
   options: ProductOptions[];

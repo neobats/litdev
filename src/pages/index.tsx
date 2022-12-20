@@ -1,16 +1,18 @@
 import * as React from "react"
 import type { PageProps } from "gatsby"
 import { Layout } from "../components/templates"
-import { Text, Burst } from "../components/atoms"
+import { Text, Oval } from "../components/atoms"
+import { BannerFeature } from "../components/molecules"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout
       title="LitDev: for Computing and Literature Nerds"
     >
-      <article>
+      <BannerFeature color="magenta" layout="right">
+        <Oval color="purple" text="Wait, I can do what now?" />
         <Text size="sm">It&apos;s dangerous out there, take this!</Text>
-      </article>
+      </BannerFeature>
     </Layout>
   )
 }

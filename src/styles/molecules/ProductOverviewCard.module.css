@@ -1,0 +1,23 @@
+.Wrapper {
+  background: #6e6e6e;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "title title"
+                       "image tags";
+
+  gap: 0.75rem;
+}
+
+.Wrapper > p {
+  grid-area: title;
+}
+
+.Image {
+  grid-area: image;
+}
+
+.Tags {
+  grid-area: tags;
+}
