@@ -1,6 +1,5 @@
 import { graphql, PageProps } from "gatsby"
 import React from "react"
-import { ProductOverviewCard } from "../components/molecules/ProductOverviewCard"
 import { CardsProductOverview } from "../components/organisms/CardsProductOverview"
 import { Layout } from "../components/templates"
 import { ProductOverview } from "../types/printify"

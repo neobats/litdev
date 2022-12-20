@@ -11,7 +11,7 @@
   position: relative;
 }
 
-.Wrapper > p {
+.Wrapper > h3 {
   grid-area: title;
 }
 
@@ -33,4 +33,19 @@
 
 .HasFeatured {
   padding-bottom: 2.5rem;
+}
+
+.Link {
+  display: block;
+  text-decoration: none;
+  background-color: #6e6e6e;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.Link:hover {
+  background-color: var(--magenta);
+}
+
+.Link:active {
+  background-color: var(--purple);
 }
