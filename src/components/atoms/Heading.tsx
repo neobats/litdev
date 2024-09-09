@@ -1,7 +1,7 @@
 import React from 'react'
 
 type TypographyProps = {
-  as?: "h1" | "h2" | "h3" | "h4"
+  as?: "h1" | "h2" | "h3" | "h4" | "p"
   children: React.ReactNode
 } & React.HTMLAttributes<HTMLParagraphElement>
 
@@ -20,7 +20,10 @@ export const Heading = ({
     : as === "h3" ? (
       <h3 {...props}>{children}</h3>
     )
-    : (
+    : as === "h4" ? (
       <h4 {...props}>{children}</h4>
+    )
+    : (
+      <p className={`font-display ${props.className}`} {...props}>{children}</p>
     )
 }

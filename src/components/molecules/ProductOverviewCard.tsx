@@ -17,7 +17,7 @@ export const ProductOverviewCard = ({ product }: ProductOverviewCardProps) => {
         product.featured && styles.HasFeatured
       )}>
         <Heading as="h3">{product.title}</Heading>
-        <ProductImage image={product.images[0]} size="large" />
+        <ProductImage image={product.images[0]} size="lg" />
         <div>
           {product.tags.map((tag, i) => (
             <Text as="span" size="xs" key={tag} color="neutral">

@@ -5,5 +5,10 @@
   align-items: center;
   padding: 1rem;
   transform: rotate(10deg);
-  margin: 1rem 0;
+  margin: 1rem;
+  max-width: 100%;
+}
+
+.Oval * {
+  word-break: break-word;
 }

@@ -5,7 +5,7 @@ import { ProductImage as ProductImageType } from "../../types/printify"
 
 type ProductImageProps = {
   image: ProductImageType
-  size: "small" | "medium" | "large"
+  size: "sm" | "md" | "lg"
 }
 
 export const ProductImage = ({ size, image }: ProductImageProps) => {

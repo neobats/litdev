@@ -5,7 +5,7 @@ import { Heading } from "./Heading"
 import * as ovalStyles from "../../styles/atoms/Oval.module.css"
 
 type OvalProps = {
-  text?: string
+  text?: string | React.ReactNode
   color?: Color
 }
 export const Oval = ({ text, color }: OvalProps) => {
@@ -15,7 +15,7 @@ export const Oval = ({ text, color }: OvalProps) => {
       `txt-${color}`,
       ovalStyles.Oval
     )}>
-      <Heading as="h3">{text}</Heading>
+      <Heading as="p">{text}</Heading>
     </div>
   )
 }

@@ -1,17 +1,58 @@
 .BannerFeature {
   display: grid;
-  grid-template-areas: "text feature";
-  grid-template-columns: 1fr max-content;
+  grid-template-areas: "text" "feature";
+  grid-template-rows: max(60ch, 1fr) max-content;
   gap: 0.75rem;
   width: 100%;
   padding: 1rem;
 }
 
+.BannerFeature > * {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.BannerFeature > *:first-child {
+  grid-area: text;
+}
+.BannerFeature > *:last-child {
+  grid-area: feature;
+}
+
 .BannerRight {
-  grid-template-columns: max-content 1fr;
-  grid-template-areas: "feature text";
+  grid-template-rows: max-content max(60ch, 1fr);
+  grid-template-areas: "feature" "text";
+}
+
+.BannerRight > *:first-child {
+  grid-area: feature;
+}
+.BannerRight > *:last-child {
+  grid-area: text;
 }
 
 .BannerEven {
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+  .BannerFeature {
+    grid-template-areas: "text feature";
+    grid-template-rows: auto;
+    grid-template-columns: max(60ch, 1fr) max-content;
+  }
+
+  .BannerFeature > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .BannerRight {
+    grid-template-areas: "feature text";
+    grid-template-rows: auto;
+    grid-template-columns: max-content max(60ch, 1fr);
+  }
+
+  .BannerEven {
+    grid-template-columns: 1fr 1fr;
+  }
 }

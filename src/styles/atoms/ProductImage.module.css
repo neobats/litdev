@@ -3,14 +3,14 @@
   height: auto;
 }
 
-.small {
+.sm {
   max-width: min(376px, 50%);
 }
 
-.medium {
+.md {
   max-width: min(500px, 75%);
 }
 
-.large {
+.lg {
   max-width: 1024px;
 }
